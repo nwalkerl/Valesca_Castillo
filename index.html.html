@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Medical Profile - Valesca Castillo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        medical: {
+                            red: '#DC2626',
+                            darkRed: '#991B1B',
+                            lightRed: '#FEF2F2',
+                            blue: '#1E3A8A',
+                            lightBlue: '#EFF6FF',
+                            slate: '#0F172A',
+                            emerald: '#059669',
+                            amber: '#D97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .print-card {
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen pb-12">
+
+    <!-- Top Emergency Notice Bar -->
+    <header class="bg-medical-red text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-3xl mx-auto px-4 py-2.5 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-200 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                </span>
+                <span class="font-bold text-xs sm:text-sm tracking-wide uppercase">Emergency Medical Profile</span>
+            </div>
+            <div class="flex items-center space-x-2 no-print">
+                <button onclick="window.print()" class="bg-white/20 hover:bg-white/30 text-white text-xs px-2.5 py-1 rounded-md flex items-center gap-1 transition font-medium">
+                    <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+                    <span class="hidden sm:inline">Print / PDF</span>
+                </button>
+                <a href="tel:131" class="bg-white text-medical-red font-extrabold text-xs px-3 py-1 rounded-md hover:bg-red-50 flex items-center gap-1 shadow-sm transition">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 animate-bounce"></i>
+                    <span>SAMU 131</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-3xl mx-auto px-4 pt-4 space-y-4">
+
+        <!-- Patient ID Banner Card -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden print-card">
+            <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-5 text-white">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/30 text-xs font-semibold mb-2">
+                            <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> PATIENT INFORMATION
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white">Valesca Andrea Castillo Arenas</h1>
+                        <div class="text-slate-300 text-sm mt-1 flex flex-wrap items-center gap-2">
+                            <span><strong class="text-white">DOB:</strong> Feb 11, 1996</span>
+                            <span class="text-slate-500">•</span>
+                            <span><strong class="text-white">Age:</strong> 30 years old</span>
+                            <span class="text-slate-500">•</span>
+                            <span class="inline-flex items-center gap-1 text-slate-200"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-400"></i> Santiago, Chile</span>
+                        </div>
+                    </div>
+
+                    <!-- Highlighted Blood Type Badge -->
+                    <div class="bg-medical-red border-2 border-white/20 text-white rounded-xl p-3 sm:px-5 text-center min-w-[120px] shadow-lg flex flex-col justify-center items-center w-full md:w-auto">
+                        <span class="text-[10px] uppercase tracking-wider font-extrabold text-red-100">Blood Type</span>
+                        <span class="text-3xl sm:text-4xl font-black leading-none my-0.5 tracking-tight">A <span class="text-red-200">Neg</span></span>
+                        <span class="text-[10px] bg-black/20 px-2 py-0.5 rounded text-white/90 font-bold">A Rh (-)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="p-3 bg-slate-100/80 border-t border-slate-200 grid grid-cols-3 gap-2 no-print text-xs font-semibold">
+                <a href="#symptoms" class="p-2 bg-white rounded-lg border border-slate-200 text-slate-700 hover:border-red-400 hover:text-red-600 flex items-center justify-center gap-1.5 shadow-sm transition">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i> Symptoms
+                </a>
+                <a href="#contacts" class="p-2 bg-white rounded-lg border border-slate-200 text-slate-700 hover:border-red-400 hover:text-red-600 flex items-center justify-center gap-1.5 shadow-sm transition">
+                    <i data-lucide="phone-outgoing" class="w-4 h-4 text-blue-600"></i> Contacts
+                </a>
+                <a href="#medications" class="p-2 bg-white rounded-lg border border-slate-200 text-slate-700 hover:border-red-400 hover:text-red-600 flex items-center justify-center gap-1.5 shadow-sm transition">
+                    <i data-lucide="pill" class="w-4 h-4 text-emerald-600"></i> Medications
+                </a>
+            </div>
+        </section>
+
+        <!-- Critical Symptoms & Alert Box -->
+        <section id="symptoms" class="bg-red-50/90 rounded-2xl border-2 border-red-200 p-4 sm:p-5 shadow-sm print-card">
+            <div class="flex items-center gap-2 mb-3">
+                <div class="p-2 bg-red-600 text-white rounded-lg">
+                    <i data-lucide="activity" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-red-950 uppercase tracking-wide">Recurrent Symptoms & Alerts</h2>
+                    <p class="text-xs text-red-700 font-medium">Primary clinical manifestations to monitor</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-white rounded-xl p-3 border border-red-200 shadow-sm flex flex-col justify-between">
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="zap" class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Non-Epileptic Seizures</h3>
+                            <p class="text-xs text-slate-600 mt-1">PNES / NEAD (Psychogenic / functional episodes).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-3 border border-red-200 shadow-sm flex flex-col justify-between">
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="heart-off" class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Fainting / Syncope</h3>
+                            <p class="text-xs text-slate-600 mt-1">Sudden loss of consciousness secondary to dysautonomia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-3 border border-red-200 shadow-sm flex flex-col justify-between">
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="brain-circuit" class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"></i>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Panic Attacks</h3>
+                            <p class="text-xs text-slate-600 mt-1">Severe anxiety episodes and hyperventilation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic First Aid Instructions Box -->
+            <div class="mt-4 p-3 bg-white/80 rounded-xl border border-red-200 text-xs text-slate-800">
+                <div class="font-bold text-red-900 flex items-center gap-1.5 mb-1">
+                    <i data-lucide="info" class="w-4 h-4 text-red-600"></i> Emergency First Aid Protocol:
+                </div>
+                <ul class="list-disc list-inside space-y-1 text-slate-700">
+                    <li>Remain calm and ensure an open airway. **Do NOT place any objects in the mouth.**</li>
+                    <li>Turn the patient onto their side (Recovery Position) in case of loss of consciousness or seizures.</li>
+                    <li>Protect the head from impacting the floor or sharp edges.</li>
+                    <li>Call the emergency contacts listed below immediately.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Emergency Contacts Section -->
+        <section id="contacts" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-5 print-card">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <div class="p-2 bg-blue-100 text-blue-700 rounded-lg">
+                        <i data-lucide="phone-call" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Emergency Contacts</h2>
+                        <p class="text-xs text-slate-500">Designated family members & trusted contacts</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Contact 1: Nicolás Walker -->
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-slate-900 text-base">Nicolás Walker</span>
+                            <span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full font-bold">Primary Contact (Chile)</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mt-0.5 flex items-center gap-1 font-mono">
+                            <i data-lucide="phone" class="w-3.5 h-3.5 text-slate-400"></i> +56 9 2210 1225
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto no-print">
+                        <a href="tel:+56922101225" class="flex-1 sm:flex-none px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call
+                        </a>
+                        <a href="https://wa.me/56922101225?text=Hello,%20this%20is%20a%20medical%20emergency%20regarding%20Valesca%20Castillo" target="_blank" class="flex-1 sm:flex-none px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact 2: Maya Arenas -->
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-slate-900 text-base">Maya Arenas</span>
+                            <span class="text-[10px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-bold">Family (Chile)</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mt-0.5 flex items-center gap-1 font-mono">
+                            <i data-lucide="phone" class="w-3.5 h-3.5 text-slate-400"></i> +56 9 4296 5297
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto no-print">
+                        <a href="tel:+56942965297" class="flex-1 sm:flex-none px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call
+                        </a>
+                        <a href="https://wa.me/56942965297?text=Hello,%20this%20is%20a%20medical%20emergency%20regarding%20Valesca%20Castillo" target="_blank" class="flex-1 sm:flex-none px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact 3: Eduardo Castillo -->
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-slate-900 text-base">Eduardo Castillo</span>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">Family (Spain 🇪🇸)</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mt-0.5 flex items-center gap-1 font-mono">
+                            <i data-lucide="phone" class="w-3.5 h-3.5 text-slate-400"></i> +34 605 52 40 55
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto no-print">
+                        <a href="tel:+34605524055" class="flex-1 sm:flex-none px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <i data-lucide="phone" class="w-3.5 h-3.5"></i> Call
+                        </a>
+                        <a href="https://wa.me/34605524055?text=Hello,%20this%20is%20a%20medical%20emergency%20regarding%20Valesca%20Castillo" target="_blank" class="flex-1 sm:flex-none px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm transition">
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Diagnoses Card -->
+            <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-5 print-card">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="p-2 bg-amber-100 text-amber-800 rounded-lg">
+                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-base font-bold text-slate-900 uppercase tracking-wide">Medical Conditions</h2>
+                </div>
+                <ul class="space-y-2">
+                    <li class="p-2.5 rounded-lg bg-amber-50/60 border border-amber-200/60 flex items-start gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <span class="font-bold text-slate-900 text-sm block">Dysautonomia</span>
+                            <span class="text-xs text-slate-600">Autonomic nervous system dysfunction (blood pressure and heart rate dysregulation).</span>
+                        </div>
+                    </li>
+                    <li class="p-2.5 rounded-lg bg-amber-50/60 border border-amber-200/60 flex items-start gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <span class="font-bold text-slate-900 text-sm block">Obsessive-Compulsive Disorder (OCD)</span>
+                            <span class="text-xs text-slate-600">Neuropsychiatric condition under ongoing treatment.</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Surgical History Card -->
+            <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-5 print-card">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="p-2 bg-red-100 text-red-700 rounded-lg">
+                        <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-base font-bold text-slate-900 uppercase tracking-wide">Surgical History</h2>
+                </div>
+                <div class="p-3 rounded-xl bg-red-50/50 border border-red-200">
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="scissors" class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm">Wolff-Parkinson-White (WPW) Ablation / Surgery</h3>
+                            <p class="text-xs text-red-900 font-medium mt-1">Cardiac Surgical History</p>
+                            <p class="text-xs text-slate-600 mt-1">Surgical treatment for extra electrical pathway in the heart.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Current Medications Section -->
+        <section id="medications" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-5 print-card">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <div class="p-2 bg-emerald-100 text-emerald-800 rounded-lg">
+                        <i data-lucide="pill" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 uppercase tracking-wide">Current Medications</h2>
+                        <p class="text-xs text-slate-500">Ongoing pharmacological treatment</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-200 bg-slate-50 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                            <th class="py-2 px-3">Medication</th>
+                            <th class="py-2 px-3">Dosage</th>
+                            <th class="py-2 px-3">Class / Indication</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-xs">
+                        <tr class="hover:bg-slate-50/80">
+                            <td class="py-2.5 px-3 font-bold text-slate-900 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Fluoxetine
+                            </td>
+                            <td class="py-2.5 px-3 font-mono text-slate-700 font-semibold">20 mg</td>
+                            <td class="py-2.5 px-3 text-slate-600">SSRI Antidepressant / OCD Treatment</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80">
+                            <td class="py-2.5 px-3 font-bold text-slate-900 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Quetiapine
+                            </td>
+                            <td class="py-2.5 px-3 font-mono text-slate-700 font-semibold">100 mg</td>
+                            <td class="py-2.5 px-3 text-slate-600">Antipsychotic / Mood Modulator</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80">
+                            <td class="py-2.5 px-3 font-bold text-slate-900 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Zopiclone
+                            </td>
+                            <td class="py-2.5 px-3 font-mono text-slate-700 font-semibold">7.5 mg</td>
+                            <td class="py-2.5 px-3 text-slate-600">Hypnotic / Sleep Regulator</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80">
+                            <td class="py-2.5 px-3 font-bold text-slate-900 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Oral Contraceptives
+                            </td>
+                            <td class="py-2.5 px-3 font-mono text-slate-700 font-semibold">As scheduled</td>
+                            <td class="py-2.5 px-3 text-slate-600">Hormonal Contraceptive Therapy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Quick Emergency Chilean Numbers -->
+        <section class="bg-slate-900 text-white rounded-2xl p-4 shadow-sm no-print">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 text-center">Local Emergency Numbers (Santiago, Chile)</h3>
+            <div class="grid grid-cols-3 gap-2 text-center">
+                <a href="tel:131" class="bg-slate-800 hover:bg-red-900/50 border border-slate-700 hover:border-red-500 p-2.5 rounded-xl transition group">
+                    <span class="block text-red-400 font-black text-lg group-hover:scale-105 transition-transform">131</span>
+                    <span class="text-[10px] text-slate-300 font-medium">SAMU (Ambulance)</span>
+                </a>
+                <a href="tel:133" class="bg-slate-800 hover:bg-blue-900/50 border border-slate-700 hover:border-blue-500 p-2.5 rounded-xl transition group">
+                    <span class="block text-blue-400 font-black text-lg group-hover:scale-105 transition-transform">133</span>
+                    <span class="text-[10px] text-slate-300 font-medium">Police</span>
+                </a>
+                <a href="tel:132" class="bg-slate-800 hover:bg-amber-900/50 border border-slate-700 hover:border-amber-500 p-2.5 rounded-xl transition group">
+                    <span class="block text-amber-400 font-black text-lg group-hover:scale-105 transition-transform">132</span>
+                    <span class="text-[10px] text-slate-300 font-medium">Fire Dept</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-xs text-slate-400 py-4 print-card">
+            <p>Rapid Medical Response Card • Valesca Andrea Castillo Arenas (Santiago, Chile)</p>
+            <p class="text-[10px] text-slate-400 mt-1">Personal Emergency Medical Document.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
